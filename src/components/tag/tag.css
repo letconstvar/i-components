@@ -1,0 +1,46 @@
+.i-tag-base {
+  display: inline-block;
+  border-radius: 5px;
+  color: #ffffff;
+  /* 禁止选中文字 */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* mini */
+.i-tag-size-mini {
+  padding: 1px 5px;
+  font-size: 12px;
+}
+
+/* small */
+.i-tag-size-small {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+/* medium */
+.i-tag-size-medium {
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+/* bigger */
+.i-tag-size-bigger {
+  line-height: 30px;
+  padding: 0px 12px;
+  font-size: 12px;
+}
+
+/* icon base style */
+.i-icon-base {
+  margin-left: 5px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+}
+.i-icon-base:hover {
+  background: rgba(204, 204, 204, 0.7);
+}
