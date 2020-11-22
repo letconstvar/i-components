@@ -18,6 +18,7 @@
 
 <script>
   export default {
+    name: 'i-button',
     props: {
       type: {
         type: String,
@@ -53,7 +54,7 @@
 </script>
 
 
-<style scoped>
+<style>
   /* base button style */
   .i-button {
     display: inline-block;
