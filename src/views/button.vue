@@ -31,22 +31,22 @@
     <div>
       <div>circle</div>
       <i-button circle plain round type="success"><i-icon name="search"></i-icon></i-button>
-      <i-button circle plain round type="primary"><i-icon name="41shangchuantupian"></i-icon></i-button>
-      <i-button circle plain round type="warning"><i-icon name="41shangchuantupian"></i-icon></i-button>
-      <i-button circle plain round type="info"><i-icon name="41shangchuantupian"></i-icon></i-button>
-      <i-button circle plain round type="danger" @click="fn"><i-icon name="41shangchuantupian"></i-icon></i-button>
+      <i-button circle plain round type="primary"><i-icon name="emoji"></i-icon></i-button>
+      <i-button circle plain round type="warning"><i-icon name="emoji"></i-icon></i-button>
+      <i-button circle plain round type="info"><i-icon name="emoji"></i-icon></i-button>
+      <i-button circle plain round type="danger" @click="fn"><i-icon name="emoji"></i-icon></i-button>
     </div>
     <br>
     <div>
       <div>size</div>
       <i-button size="mini" plain type="success"><i-icon name="search"></i-icon></i-button>
-      <i-button size="medium" plain type="primary"><i-icon name="41shangchuantupian"></i-icon></i-button>
-      <i-button size="bigger" plain type="warning"><i-icon name="41shangchuantupian"></i-icon></i-button>
+      <i-button size="medium" plain type="primary"><i-icon name="emoji"></i-icon></i-button>
+      <i-button size="bigger" plain type="warning"><i-icon name="emoji"></i-icon></i-button>
     </div>
     <br>
     <div>
       <div>disabled</div>
-      <i-button circle plain disabled round type="danger" @click="fn"><i-icon name="41shangchuantupian"></i-icon></i-button>
+      <i-button circle plain disabled round type="danger" @click="fn"><i-icon name="attentionforbidfill"></i-icon></i-button>
     </div>
   </div>
 </template>
