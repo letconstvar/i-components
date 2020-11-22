@@ -78,7 +78,7 @@ export default {
             },
             class: ['i-icon-base'],
             attrs: {
-              name: 'close2'
+              name: 'close'
             },
             nativeOn: {
               click: function () {
