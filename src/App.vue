@@ -5,6 +5,7 @@
       <router-link to="/icon">i-icon</router-link> |
       <router-link to="/message">message</router-link> | 
       <router-link to="/button">button</router-link> | 
+      <router-link to="/dialog">dialog</router-link> | 
     </div>
     <router-view/>
   </div>
