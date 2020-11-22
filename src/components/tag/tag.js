@@ -1,4 +1,5 @@
 export default {
+  name: 'i-tag',
   props: {
     theme: {
       type: String,
