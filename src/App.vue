@@ -7,6 +7,7 @@
       <router-link to="/button">i-button</router-link> | 
       <router-link to="/dialog">i-dialog</router-link> | 
       <router-link to="/input">i-input</router-link> | 
+      <router-link to="/switch">i-switch</router-link> | 
     </div>
     <router-view/>
   </div>

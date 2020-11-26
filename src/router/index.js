@@ -34,6 +34,11 @@ const routes = [
     name: 'i-input',
     component: () => import(/* webpackChunkName: "input" */ '../views/input.vue')
   },
+  {
+    path: '/switch',
+    name: 'i-switch',
+    component: () => import(/* webpackChunkName: "switch" */ '../views/switch.vue')
+  },
 ]
 
 const router = new VueRouter({
