@@ -4,8 +4,9 @@
       <router-link to="/tag">Tag</router-link> |
       <router-link to="/icon">i-icon</router-link> |
       <router-link to="/message">message</router-link> | 
-      <router-link to="/button">button</router-link> | 
-      <router-link to="/dialog">dialog</router-link> | 
+      <router-link to="/button">i-button</router-link> | 
+      <router-link to="/dialog">i-dialog</router-link> | 
+      <router-link to="/input">i-input</router-link> | 
     </div>
     <router-view/>
   </div>
