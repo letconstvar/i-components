@@ -63,8 +63,8 @@ export default {
       _class.push('i-tag-size-small');
     } else if (self.size === "medium") {
       _class.push('i-tag-size-medium');
-    } else if (self.size === "bigger") {
-      _class.push('i-tag-size-bigger');
+    } else if (self.size === "large") {
+      _class.push('i-tag-size-large');
     }
 
     // closable

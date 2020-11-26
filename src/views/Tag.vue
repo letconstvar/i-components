@@ -6,12 +6,12 @@
     <Tag size="mini">mini</Tag> &nbsp;
     <Tag theme="plain" size="small">small</Tag>&nbsp;
     <Tag theme="light" size="medium">medium</Tag>&nbsp;
-    <Tag theme="full" size="bigger">bigger</Tag>&nbsp;
+    <Tag theme="full" size="large">large</Tag>&nbsp;
     <div>
       close:
     </div>
-    <Tag theme="full" size="bigger" :closable=true @close="onClose">bigger</Tag>&nbsp;
-    <Tag theme="plain" size="mini" :closable=true @close="onClose">bigger</Tag>&nbsp;
+    <Tag theme="full" size="large" :closable=true @close="onClose">large</Tag>&nbsp;
+    <Tag theme="plain" size="mini" :closable=true @close="onClose">large</Tag>&nbsp;
   </div>
 </template>
 

@@ -27,7 +27,12 @@ const routes = [
   {
     path: '/dialog',
     name: 'i-dialog',
-    component: () => import(/* webpackChunkName: "button" */ '../views/dialog.vue')
+    component: () => import(/* webpackChunkName: "dialog" */ '../views/dialog.vue')
+  },
+  {
+    path: '/input',
+    name: 'i-input',
+    component: () => import(/* webpackChunkName: "input" */ '../views/input.vue')
   },
 ]
 
