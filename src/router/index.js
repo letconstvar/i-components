@@ -39,6 +39,16 @@ const routes = [
     name: 'i-switch',
     component: () => import(/* webpackChunkName: "switch" */ '../views/switch.vue')
   },
+  {
+    path: '/radio',
+    name: 'i-radio',
+    component: () => import(/* webpackChunkName: "radio" */ '../views/radio.vue')
+  },
+  {
+    path: '/checkbox',
+    name: 'i-checkbox',
+    component: () => import(/* webpackChunkName: "checkbox" */ '../views/checkbox.vue')
+  },
 ]
 
 const router = new VueRouter({

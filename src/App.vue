@@ -8,6 +8,8 @@
       <router-link to="/dialog">i-dialog</router-link> | 
       <router-link to="/input">i-input</router-link> | 
       <router-link to="/switch">i-switch</router-link> | 
+      <router-link to="/radio">i-radio</router-link> | 
+      <router-link to="/checkbox">i-checkbox</router-link> | 
     </div>
     <router-view/>
   </div>
