@@ -93,6 +93,7 @@
     display: inline-block;
     width: 100%;
     font-size: 14px;
+    margin-left: 2px;
   }
   .i-input .i-input__inner {
     -webkit-appearance: none;
@@ -171,9 +172,9 @@
   }
   .i-input__mini .i-input__inner {
     height: 30px;
-    line-height: 30px;
+    line-height: 40px;
   }
   .i-input__mini .i-input__suffix {
-    line-height: 30px;
+    line-height: 40px;
   }
 </style>
