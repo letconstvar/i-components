@@ -49,6 +49,16 @@ const routes = [
     name: 'i-checkbox',
     component: () => import(/* webpackChunkName: "checkbox" */ '../views/checkbox.vue')
   },
+  {
+    path: '/form',
+    name: 'i-form',
+    component: () => import(/* webpackChunkName: "checkbox" */ '../views/form.vue')
+  },
+  {
+    path: '/uploadImage',
+    name: 'i-upload-image',
+    component: () => import(/* webpackChunkName: "uploadImage" */ '../views/uploadImage.vue')
+  },
 ]
 
 const router = new VueRouter({

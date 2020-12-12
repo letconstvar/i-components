@@ -10,6 +10,8 @@
       <router-link to="/switch">i-switch</router-link> | 
       <router-link to="/radio">i-radio</router-link> | 
       <router-link to="/checkbox">i-checkbox</router-link> | 
+      <router-link to="/form">i-form</router-link> | 
+      <router-link to="/uploadImage">i-upload-image</router-link> | 
     </div>
     <router-view/>
   </div>
