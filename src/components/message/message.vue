@@ -1,71 +1,133 @@
 <template>
-  <transition name="message-fade">
-    <div v-if="visible" :class="wrapClasses">
-        <!-- <img class="message_img" :src="typeImg"/> -->
-        <span>
-          {{message}}
-        </span>
-    </div>        
+  <transition name="sidle-fade" @after-leave="handleAfterLeave">
+    <div v-show="visible" :class="[ 'i-message' , `i-message-${type}`, '$__count-message' ]" :style="positionTop">
+
+      <span class="i-message-icon-success" v-if="type=='success'">
+        <i-icon name="roundcheckfill"></i-icon>
+      </span>
+
+      <span class="i-message-icon-info" v-if="type=='info'">
+        <i-icon name="commentfill"></i-icon>
+      </span>
+
+      <span class="i-message-icon-warning" v-if="type=='warning'">
+        <i-icon name="warnfill"></i-icon>
+      </span>
+
+      <span class="i-message-icon-error" v-if="type=='error'">
+        <i-icon name="roundclosefill"></i-icon>
+      </span>
+
+      <span class="i-message-text">
+        {{ text }}
+      </span>
+
+      <span class="i-message-close-icon" @click="handleClose">
+        <i-icon name="close"></i-icon>
+      </span>
+    </div>
   </transition>
 </template>
 
 
 <script>
-  const prefixCls = 'message';
+  const typeMap = {
+    success: 'success',
+    info: 'info',
+    warning: 'warning',
+    error: 'error',
+  };
   export default {
-    name: 'message',
+    name: 'i-message',
     data () {
       return {
         visible: false,
-        type:'info',
-        message: '',
-        duration: 3000
+        type: '',
+        text: '',
       }
     },
-    computed:{
-      // typeImg(){
-      //   return require(`./assets/${this.type}.svg`);
-      // },
-      wrapClasses(){
-        return [
-          `${prefixCls}`,
-          `${prefixCls}-${this.type}`
-        ]
+    computed: {
+      positionTop () {
+        let count = document.getElementsByClassName('$__count-message').length;
+        let top = count == 0 ? 20 : 40*count + 10*count + 20;
+        return {
+          top: `${top}px`
+        }
       }
     },
-
-    mounted() {
-      this.setTimer() // 挂载的时候就开始计时，3000ms后消失
-    },
-
     methods: {
-      setTimer() {
-        setTimeout(() => {
-          this.close() // 3000ms之后调用关闭方法
-        }, this.duration)
+      handleAfterLeave () {
+        this.$emit('after-leave', '');
       },
-
-      close() {
-        this.visible = false
-        setTimeout(() => {
-          this.$destroy(true)
-          this.$el.parentNode.removeChild(this.$el) // 从DOM里将这个组件移除
-        }, 500)
+      handleClose () {
+        this.$el.parentNode.removeChild(this.$el);
+        this.$destroy();
       }
     }
   }
 </script>
 
 
-<style scoped>
-  .slide-enter-active,
-  .slide-leave-active {
-    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-    transition: all 0.2s ease;
+<style>
+  .i-message {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    border-radius: 2px;
+    height:40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(204, 204, 204, 0.5);
   }
-  .slide-enter,
-  .slide-leave-to {
-    transform: translateY(-20px);
-    opacity: 0;
+  .i-message-close-icon {
+    float: right;
+  }
+  .i-message-text {
+    margin: 0 10px;
+    font-size: 14px;
+    color: #a09f9f;
+  }
+
+  /* icon style */
+  .i-message-icon-success {
+    color: rgb(51, 177, 51);
+    font-size: 18px;
+  }
+  .i-message-icon-info {
+    color: #cccccc;
+    font-size: 18px;
+  }
+  .i-message-icon-warning {
+    color: #faecd8;
+    font-size: 18px;
+  }
+  .i-message-icon-warning {
+    color: #fdc678;
+    font-size: 18px;
+  }
+  .i-message-icon-error {
+    color: #ff7171;
+    font-size: 18px;
+  }
+  .i-message-close-icon {
+    color: #cccccc;
+    font-size: 18px;
+  }
+
+  .sidle-fade-enter-active {
+    animation: sildeFade .5s;
+  }
+  .sidle-fade-leave-active {
+    animation: sildeFade .5s reverse;
+  }
+  @keyframes sildeFade {
+    0% {
+      transform: translate(-50%, -40px);
+    }
+    100% {
+      transform: translate(-50%, 0px);
+    }
   }
 </style>
