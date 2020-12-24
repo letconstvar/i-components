@@ -12,6 +12,7 @@
       <router-link to="/checkbox">i-checkbox</router-link> | 
       <router-link to="/form">i-form</router-link> | 
       <router-link to="/uploadImage">i-upload-image</router-link> | 
+      <router-link to="/menu">i-menu</router-link> | 
     </div>
     <router-view/>
   </div>

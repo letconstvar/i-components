@@ -59,6 +59,11 @@ const routes = [
     name: 'i-upload-image',
     component: () => import(/* webpackChunkName: "uploadImage" */ '../views/uploadImage.vue')
   },
+  {
+    path: '/menu',
+    name: 'i-menu',
+    component: () => import(/* webpackChunkName: "menu" */ '../views/menu.vue')
+  },
 ]
 
 const router = new VueRouter({
