@@ -2,7 +2,7 @@
   <section class="i-upload-image">
 
     <!-- upload input -->
-    <div class="i-upload-image__content" @click="getFile" v-show="!showImage">
+    <div class="i-upload-image__content" :style="imageBoxSize" @click="getFile" v-show="!showImage">
       <span class="i-upload-image__uploadIcon">
         <span v-if="$slots.uploadIcon">
           <slot name="uploadIcon"></slot>
@@ -19,7 +19,7 @@
     </div>
 
     <!-- image -->
-    <div class="i-upload-image__imageBox" v-show="showImage">
+    <div class="i-upload-image__imageBox" :style="imageBoxSize" v-show="showImage">
       <span class="i-upload-image__closeIcon" @click="handleClear">
         <span v-if="$slots.closeIcon">
           <slot name="closeIcon"></slot>
@@ -68,8 +68,20 @@ export default {
       type: String,
       default: 'contain'
     },
-
+    name: {
+      type: String,
+      default: ''
+    },
+    width: {
+      type: String,
+      default: '80px'
+    },
+    height: {
+      type: String,
+      default: '80px'
+    }
   },
+
   data () {
     return {
       showImage: false,
@@ -82,22 +94,44 @@ export default {
         width: '100%',
         height: '100%',
         objectFit: this.objectFit
+      },
+      imageBoxSize: {
+        width: this.width,
+        height: this.height,
       }
     }
   },
+
+  watch: {
+    src: {
+      handler: function (new_value) {
+        if (new_value != "") {
+          this.showImage = true;
+        }
+        if (new_value == "") {
+          this.showImage = false;
+        }
+      },
+      immediate: true
+    }
+  },
+
   methods: {
     getFile () {
       this.$refs.upload_input.click();
     },
+
     onChange (e) {
-      this.$emit('change', e);
-      this.showImage = true;
+      this.$emit('change', {e: e, name: this.name});
+      // this.showImage = true;
     },
+
     handleClear () {
       this.$refs.upload_input.value = null;
       this.showImage = false;
-      this.$emit('clear', '');
+      this.$emit('clear', {name: this.name});
     },
+
     previewImage () {
       this.isPreviewImage = true;
       let img = new Image();
@@ -136,8 +170,8 @@ export default {
 <style>
 .i-upload-image .i-upload-image__content, .i-upload-image__imageBox {
     position: relative;
-    width: 80px;
-    height: 80px;
+    /* width: 80px;
+    height: 80px; */
     box-sizing: border-box;
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
@@ -146,6 +180,7 @@ export default {
   }
   .i-upload-image .i-upload-image__content .i-upload-image__uploadIcon {
     position: absolute;
+    display: inline-block;
     width: 100%;
     font-size: 30px;
     color: #cccccc;
