@@ -31,12 +31,12 @@
 
 
 <script>
-  const typeMap = {
-    success: 'success',
-    info: 'info',
-    warning: 'warning',
-    error: 'error',
-  };
+  // const typeMap = {
+  //   success: 'success',
+  //   info: 'info',
+  //   warning: 'warning',
+  //   error: 'error',
+  // };
   export default {
     name: 'i-message',
     data () {
